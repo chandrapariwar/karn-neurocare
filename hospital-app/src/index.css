@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a2e; background: #fff; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm cursor-pointer border-none transition-all duration-200; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/30; }
+  .btn-outline { @apply btn bg-transparent text-white border-2 border-white/40 hover:bg-white/10 hover:border-white; }
+  .btn-white { @apply btn bg-white text-danger font-bold hover:bg-red-50; }
+  .btn-sm { @apply btn px-4 py-2 text-xs; }
+
+  .card { @apply bg-white rounded-2xl border border-gray-100 p-6; }
+  .section-tag { @apply inline-block bg-brand-light text-brand text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-3; }
+  .section-title { @apply font-serif text-3xl md:text-4xl font-bold text-navy leading-tight mb-3; }
+  .section-sub { @apply text-gray-500 text-base leading-relaxed max-w-xl; }
+
+  .input { @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 font-sans transition-all; }
+  .label { @apply block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2; }
+
+  .badge-low    { @apply inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-800; }
+  .badge-medium { @apply inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800; }
+  .badge-high   { @apply inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-orange-800; }
+  .badge-crit   { @apply inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-800; }
+}
